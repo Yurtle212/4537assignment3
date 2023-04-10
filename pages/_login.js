@@ -19,7 +19,7 @@ function Login({username, setUsername, password, setPassword, user, setUser}) {
     <div>
       
         <form onSubmit={handleSubmit}>
-          <span> Admin Login </span>
+          <span> Login </span>
           <br />
           <input
             type="text"

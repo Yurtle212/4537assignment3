@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-function pagination({ numberOfPages, currentPage, setCurrentPage }) {
-  const [showPrev, setShowPrev] = React.useState(true)
-  const [showNext, setShowNext] = React.useState(true)
+function Pagination({ numberOfPages, currentPage, setCurrentPage }) {
+  const [showPrev, setShowPrev] = useState(true)
+  const [showNext, setShowNext] = useState(true)
 
   const pageNumbers = []
   for (let i = 1; i <= numberOfPages; i++) {
@@ -47,4 +47,4 @@ function pagination({ numberOfPages, currentPage, setCurrentPage }) {
   )
 }
 
-export default pagination
+export default Pagination
