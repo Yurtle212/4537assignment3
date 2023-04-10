@@ -1,6 +1,11 @@
 import React from 'react';
 
-function page({ currentPokemons, currentPage }) {
+function page({ currentPokemons, currentPage, setPokemon, pokemon }) {
+  let handleView = (item) => {
+    setPokemon(item)
+    console.log(item)
+  }
+
   return (
     <div>
       <h1>Page number {currentPage}</h1>
@@ -17,6 +22,7 @@ function page({ currentPokemons, currentPage }) {
               <tr>
                 <td>{item.name.english}</td>
                 <td>{item.id}</td>
+                <td><button onClick={() => {handleView(item)}}>View</button></td>
               </tr>
             </React.Fragment>
           ))}

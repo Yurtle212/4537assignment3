@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-function Logout({ setUser }) {
+function Logout({ setUser, user }) {
+    let handleClick = () => {
+        setUser({})
+    }
+
     return (
         <>
-            <button onClick={setUser({})}>
+            <button onClick={handleClick}>
                 Logout
             </button>
         </>

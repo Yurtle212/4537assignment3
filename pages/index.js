@@ -5,6 +5,7 @@ import FilteredPagination from './_filterPagination';
 import Search from './_search';
 import Login from './_login';
 import Logout from './_logout';
+import Pokemon from './_pokemon';
 import axios from 'axios'
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState({});
+
+  const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
     async function getTypes() {
@@ -25,15 +28,25 @@ function App() {
 
   return (
     <div>
-      {user?.username ? (<>
+      {user.username == undefined ? (<>
         <Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} user={user} setUser={setUser} />
       </>) :
-        (<>
-          <Search types={types} checkedState={checkedState} setCheckedState={setCheckedState} />
-          <FilteredPagination types={types} checkedState={checkedState} />
-        </>)
+        (
+          <div>
+          {
+            pokemon?.name?.english == undefined ? (<>
+              <Search types={types} checkedState={checkedState} setCheckedState={setCheckedState} />
+              <FilteredPagination types={types} checkedState={checkedState} pokemon={pokemon} setPokemon={setPokemon} />
+              <Logout setUser={setUser} user={user} />
+            </>) :
+              (
+                <Pokemon pokemon={pokemon} setPokemon={setPokemon} />
+              )
+          }
+        </div>
+        )
       }
-    </div>
+    </div >
   )
 }
 
