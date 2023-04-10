@@ -1,0 +1,20 @@
+body {
+    background-color: cyan;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokerman {
+    background-color: white;
+    border-radius: 10px;
+    margin: .5%;
+    padding: .25%;
+    width: 100px;
+}
+
+.pokerman img {
+    width: 100%;
+}

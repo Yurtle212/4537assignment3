@@ -6,7 +6,13 @@ function Pokemon({ pokemon, setPokemon }) {
     return (
         <div>
             <p>{pokemon.name.english}</p>
-            <button onClick={() => setPokemon({})}>back</button>
+            <p>{pokemon.base.HP} hp</p>
+            <p>{pokemon.base.Attack} atk</p>
+            <p>{pokemon.base.Defense} def</p>
+            <p>{pokemon.base["Sp. Attack"]} sp. atk</p>
+            <p>{pokemon.base["Sp. Defense"]} sp. def</p>
+            <img src={"https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/" + pokemon.id.toString().padStart(3, '0') + ".png"}></img>
+            <br></br><button onClick={() => setPokemon({})}>back</button>
         </div>
     )
 }
